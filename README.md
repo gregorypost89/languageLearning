@@ -21,4 +21,28 @@ Download sentenceGenerator.py in this repository.  You will need command prompt 
 a python installation to use this program.  
 
 Navigate to the directory
-containing sentenceGenerator.py and 
+containing sentenceGenerator.py in your command prompt terminal,
+and then run the following command in your console
+
+```
+python sentenceGenerator.py
+```
+
+You should see the following dialog.  As of now, there is only the "New Entry" option, so press enter to proceed.
+
+![alt text](img/1.png)
+
+We will then be presented with our three input questions.  For this example, 
+we will use the english word "baby", the japanese translation "akachan", and the mnemonic
+for "akachan" as "action":
+
+![alt text](img/2.png)
+
+Once typed in, the program generates the following sentences:
+
+![alt text](img/3.png)
+
+What this program essentially does under the hood is fetch example sentences from an online 
+resource for the english word "baby", and substitutes the mnemonic "action" in those sentences
+to generate a new sentence that will help the user associate between
+the english word and the word in their target language. 

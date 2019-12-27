@@ -51,7 +51,7 @@ if "new entry" in answers.values():
             'message': "What is the target language word for " + str(answers1) + " ?",
         }
     ]
-    answers2 = str(prompt(questions2, style=style).get(u"jword"))
+    answers2 = "(" + str(prompt(questions2, style=style).get(u"jword")) + ")"
 
     questions3 = [
         {
@@ -60,14 +60,12 @@ if "new entry" in answers.values():
             'message': "" + str(answers2) + " sounds like: ",
         }
     ]
-    answers3 = "(" + str(prompt(questions3, style=style).get(u"soundsLike")) + ")"
+    answers3 = str(prompt(questions3, style=style).get(u"soundsLike"))
 
-combo = answers2 + answers3
+combo = answers3 + answers2
 url = 'https://www.merriam-webster.com/dictionary/' + answers1 + '#examples/'
 page = requests.get(url)
-print(page)
 tree = html.fromstring(page.content)
-print(tree)
 # This will create a list of sentences:
 sentences = tree.xpath('//span[@class="ex-sent  t no-aq sents"]/text()')
 wordInSentence = tree.xpath('//em[@class="mw_t_it"]/text()')
@@ -79,8 +77,6 @@ for x in sentences:
     x = x.strip()
     cleanedSentences.append(x)
 
-print(cleanedSentences)
-
 
 for y in cleanedSentences:
     if cleanedSentences.index(y) is 0:
@@ -90,14 +86,7 @@ for y in cleanedSentences:
     else:
         secondPart.append(y)
 
-# print(firstPart)
-# print(wordInSentence)
-# print(secondPart)
-
 for z in range(0, len(cleanedSentences) - 1):
-    #print(soundsLike + ' ' + str(wordInSentence[z]) + ' ' + str(secondPart[z]))
-    #print(str(firstPart[z]) + ' ' + str(wordInSentence[z]) + ' ' + soundsLike)
-    #print(cleanedSentences[z] + ' ' + str(wordInSentence[z]) + ' ' + cleanedSentences[z+1])
     try:
         alpha = (combo + ' ' + str(wordInSentence[z]) + ' ' + cleanedSentences[z + 1])
     except IndexError:
