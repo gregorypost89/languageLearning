@@ -12,6 +12,7 @@ regex = "*"
 pyinquirer = "*"
 requests = "*"
 lxml = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"

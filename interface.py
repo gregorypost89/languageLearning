@@ -1,5 +1,5 @@
 # Source - CITGuru - <script src="https://gist.github.com/CITGuru/01dd41b3367d8bd079e2e538e0c8a396.js"></script>
-# Based on source code, put in construction.py
+# Based on source code, put in languageLearner.py
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function, unicode_literals

@@ -15,7 +15,7 @@ This module takes input from the user and generates a sentence based on three in
 - The target language spelling
 - The mnemonic for the target language spelling
 
-# Steps:
+## Steps:
 
 Download sentenceGenerator.py in this repository.  You will need command prompt and 
 a python installation to use this program.  
@@ -46,3 +46,11 @@ What this program essentially does under the hood is fetch example sentences fro
 resource for the english word "baby", and substitutes the mnemonic "action" in those sentences
 to generate a new sentence that will help the user associate between
 the english word and the word in their target language. 
+
+# Language Learner
+
+This is the main program and requires a running Redis server.
+
+Source files:
+
+http://www.ashley-bovan.co.uk/words/partsofspeech.html : Parts of speech resource
