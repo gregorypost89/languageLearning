@@ -1,14 +1,9 @@
 from __future__ import print_function, unicode_literals
-
-import requests
-
 from PyInquirer import style_from_dict, Token, prompt
-
-import urllib
 from bs4 import BeautifulSoup
 
-import pandas as pd
-
+import requests
+import urllib
 import sys
 
 style = style_from_dict({
@@ -19,22 +14,20 @@ style = style_from_dict({
     Token.Question: '',
 })
 
-
+cleanedsentences = []
 
 def mainfunction(site):
     html = urllib.urlopen(site).read()
     soup = BeautifulSoup(html, "lxml")
     page = requests.get(site)
     divs = soup.findAll('div', {"class": "text", "dir": "ltr", "flex": ""})
-    cleanedsentences = []
     for i in divs:
         i = i.get_text().replace('\n', '').strip()
         cleanedsentences.append(i)
-
-    counter = 0
     results = []
+    counter = 0
 
-    for x in range(0, 20):
+    for x in range(1, 20):
         try:
             queue = cleanedsentences[x].split()
         except IndexError:
@@ -43,7 +36,7 @@ def mainfunction(site):
                 {
                     'type': 'confirm',
                     'name': 'editPrompt',
-                    'message': 'Would you like to return to the main menu?',
+                    'message': 'Would you like to try again?',
                     'default': False
                 },
             ]
@@ -89,6 +82,7 @@ def mainfunction(site):
     if counter == 0:
         print("Sorry, no results found.")
 
+    del cleanedsentences[:]
 
 # Database imports
 
@@ -162,8 +156,8 @@ while True:
             answers3pos = "adverb"
 
         combo = answers3 + " (" + answers2 + ") "
-        counter = 1
-        url = 'https://tatoeba.org/eng/sentences/search?from=und&to=und&query=' + answers1 + '&from=eng&to=eng&page=' + str(counter)
+        page = 1
+        url = 'https://tatoeba.org/eng/sentences/search?from=und&to=und&query=' + answers1 + '&from=eng&to=eng&page=' + str(page)
         mainfunction(site=url)
 
         while True:
@@ -184,8 +178,8 @@ while True:
             answerNext = prompt(questionNext, style=style)
 
             if "see more examples" in answerNext.values():
-                counter += 1
-                url = 'https://tatoeba.org/eng/sentences/search?from=und&to=und&query=' + answers1 + '&from=eng&to=eng&page=' + str(counter)
+                page += 1
+                url = 'https://tatoeba.org/eng/sentences/search?from=und&to=und&query=' + answers1 + '&from=eng&to=eng&page=' + str(page)
                 mainfunction(site=url)
 
             elif "return to main menu" in answerNext.values():
