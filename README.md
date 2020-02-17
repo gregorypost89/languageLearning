@@ -18,19 +18,19 @@ But as we made the comparison to multiplication tables earlier, there is somethi
 
 When we look at multiples of 8, we notice a different pattern where the numbers in the same end position (factors) decrease by a value of 2 until it wraps around again at 0 back to 8.  This same pattern occurs with 9 but with a decrease of 1 each time.
 
-![multTables](https://imgur.com/Ki3Tw1X)
+![multTables](https://imgur.com/Ki3Tw1X.png)
 
 We may unconsciously do something similar when meeting new people.  If we're at a social event with hundreds of people and meet an accountant named Bill, its going to be hard to remember that among countless other people with various careers of their own.  But if we put some pattern into play using that name to make the association, it makes it a lot easier to remember.
 
 Now while accountants have various tasks, lets make the association as simple as possible so that we can remember it.  Something like the following:
 
-![bill](https://imgur.com/9W4eLVf)
+![bill](https://imgur.com/9W4eLVf.png)
 
 If we simply associate just this sentence with the person we met, we accomplish two things.  "He helps people to pay the bills" reminds us that he's an accountant, and "pay the **bills**" reminds us that his name is Bill.
 
 Now taking this all into account, lets go back to our original Japanese example.  To remind ourselves what those words are: ichi means one, ni means two, and san means three in Japanese.  We don't really have the words "ichi", "ni" and "san" used in everyday English, but we can use words that sound *similar* that would have the same effect.  We can say that "ichi" sounds like "itchy", "ni" sounds like "knee", and "san" sounds like "son".  Using those words, lets make some sentences:
 
-![oneTwoThree](https://imgur.com/cXjuxOA)
+![oneTwoThree](https://imgur.com/cXjuxOA.png)
 
 This will make memorizing these words a lot easier to remember.  Notice how we included both the target language word and the target word in one easy-to-remember sentence so that we can automatically associate those words to each other.  
 
@@ -73,17 +73,17 @@ python sentenceGenerator.py
 
 You should see the following dialog.  As of now, there is only the "New Entry" option, so press enter to proceed.
 
-![alt text](https://imgur.com/9faEHRm)
+![alt text](https://imgur.com/9faEHRm.png)
 
 We will then be presented with our three input questions.  For this example, 
 we will use the english word "cat", the japanese translation "neko", and the mnemonic
 for "neko" as "neck":
 
-![alt text](https://imgur.com/8FSEGog)
+![alt text](https://imgur.com/8FSEGog.png)
 
 Once typed in, the program generates the following sentences:
 
-![alt text](https://imgur.com/pyAxWqd)
+![alt text](https://imgur.com/pyAxWqd.png)
 
 What this program essentially does under the hood is fetch example sentences from an online 
 resource for the english word "baby", and substitutes the mnemonic "action" in those sentences
@@ -93,7 +93,7 @@ the english word and the word in their target language.
 These examples aren't too great at associating the two words.  But we can select the "Find More Examples"
 option to generate more sentences several times until we find something we like.
 
-![alt text](https://imgur.com/rbKRMVa)
+![alt text](https://imgur.com/rbKRMVa.png)
 
 
 # Language Learner
